@@ -30,7 +30,7 @@ app.use(express.json());
 app.use('/api/thought',thoughtRoute);
 
 //Server
-const server = app.listen(process.env.SERVER_PORT || 3000,()=>{
+const server = app.listen(process.env.PORT || 3000,()=>{
     console.log(`Server Running on port ${server.address().port}\n`);
 })
 
