@@ -18,7 +18,7 @@ exports.random = async(req,res)=>{
 
     //get random object from database
     try{
-        const thoughtObj = await Thought.aggregate([{ $sample: {size: 1}}]);
+        const thoughtObj = await Thought.findOne();//Thought.aggregate([{ $sample: {size: 1}}]);
         let responseObj = {
             data:[],
             success:success,
