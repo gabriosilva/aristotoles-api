@@ -1,7 +1,7 @@
 {
-  "name": "ong-api",
+  "name": "aristotoles-api",
   "version": "1.0.0",
-  "description": "An Api for NOGs",
+  "description": "My dear aristotoles",
   "main": "index.js",
   "author": "gabrio122",
   "license": "MIT",
@@ -13,5 +13,17 @@
     "mongodb": "^3.6.6",
     "mongoose": "^5.12.3",
     "nodemon": "^2.0.7"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriosilva/aristotoles-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gabriosilva/aristotoles-api/issues"
+  },
+  "homepage": "https://github.com/gabriosilva/aristotoles-api#readme"
 }
