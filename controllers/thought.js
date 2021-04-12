@@ -22,12 +22,10 @@ exports.addThought = async(req,res) => {
         error:[error.details[0]]
     })
     
-    const timestamp = Math.floor(new Date()/1000);
     const thoughtObj = new Thought({
         thought: req.body.thought,
         author: req.body.author,
-        url: req.body.url,
-        createdTimestamp: timestamp
+        url: req.body.url
     })
 
     try{
