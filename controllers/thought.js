@@ -8,7 +8,9 @@ const { randomThoughtValidation, addThoughtValidation } = require('../validators
 
 
 exports.addThought = async(req,res) => {
-     const responseObj = {
+    let success = true;
+    let errorArray = [];
+    const responseObj = {
             data:[],
             success:success,
             error:errorArray
