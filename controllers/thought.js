@@ -27,7 +27,7 @@ exports.addThought = async(req,res) => {
     })
 
     try{
-        const addedThoughtObj = await Thought.save();
+        const addedThoughtObj = await thoughtObj.save();
         responseObj.data.push(addedThoughtObj);
         return res.status(200).send(responseObj);
     }catch(err){
