@@ -8,7 +8,7 @@ const randomThoughtValidation = data =>{
 
 const addThoughtValidation = data => {
     const schema = Joi.object({
-        though: Joi.string().max(1000).required(),
+        thought: Joi.string().max(1000).required(),
         author: Joi.string().max(255).required(),
         url: Joi.string().max(255).required()
     })
