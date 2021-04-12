@@ -2,7 +2,48 @@
 const Thought = require('../models/Thought');
 
 //Validators
-const { randomThoughtValidation } = require('../validators/Thought');
+const { randomThoughtValidation, addThoughtValidation } = require('../validators/Thought');
+
+
+
+
+exports.addThought = async(req,res) => {
+     const responseObj = {
+            data:[],
+            success:success,
+            error:errorArray
+    }
+
+    const {error} = addThoughtValidation(req.body);
+    if(error) return res.status(400).send({
+        success:!success,
+        error:[error.details[0]]
+    })
+    
+    const thoughtObj = new Thought({
+        thought: req.body.thought,
+        author: req.body.author,
+        url: req.body.url
+    })
+
+    try{
+        const addedThoughtObj = await thoughtObj.save();
+        responseObj.data.push(addedThoughtObj);
+        return res.status(200).send(responseObj);
+    }catch(err){
+        success = false;
+        const error = {
+            message:err.message,
+            description: err.description
+        }
+
+        errorArray.push(error);
+
+        return res.status(502).send(responseObj);
+        
+    };
+}
+
 
 exports.random = async(req,res)=>{
     
