@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 
 const thoughtSchema = new mongoose.Schema({
-    name:{
-        type:String
-    },
     thought:{
         type:String
     },
@@ -12,6 +9,9 @@ const thoughtSchema = new mongoose.Schema({
     },
     url:{
         type:String
+    },
+    createdTimestamp:{
+        type:Number
     }
     
 });
