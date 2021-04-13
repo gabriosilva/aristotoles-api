@@ -7,4 +7,4 @@ const thoughtController = require('../controllers/thought');
 router.get('/random', thoughtController.random);
 router.post('/add', thoughtController.addThought);
 
-module.exports = router; 
+module.exports = router;
