@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const app = express();
 
-//Routes
+// Routes
 const thoughtRoute = require('./routes/thought');
 
 
@@ -12,7 +12,7 @@ dotenv.config();
 
 
 
-//Handles the database connection
+// Handles the database connection
 mongoose.connect(process.env.DB_CONNECT,
     {
         useNewUrlParser:true,
@@ -22,16 +22,14 @@ mongoose.connect(process.env.DB_CONNECT,
     console.log('Connected to Db!');
 });
 
-//Middleware
+// Middleware
 app.use(cors())
 app.use(express.json());
 
-//Route Middlewares
+// Route Middlewares
 app.use('/api/thought',thoughtRoute);
 
-//Server
+// Server
 const server = app.listen(process.env.PORT || 3000,()=>{
     console.log(`Server Running on port ${server.address().port}\n`);
 })
-
-

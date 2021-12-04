@@ -1,11 +1,8 @@
-//Models
+// Models
 const Thought = require('../models/Thought');
 
-//Validators
+// Validators
 const { randomThoughtValidation, addThoughtValidation } = require('../validators/Thought');
-
-
-
 
 exports.addThought = async(req,res) => {
     let success = true;
@@ -54,14 +51,14 @@ exports.random = async(req,res)=>{
     let errorArray = [];
     let success = true;
 
-    //validator
+    // validator
     const {error} = randomThoughtValidation(req.body);
     if(error) return res.status(400).send({
         success:!success,
         error:[error.details[0]]
     })
 
-    //get random object from database
+    // get random object from database
     try{
         const thoughtObj = await Thought.aggregate([{ $sample: {size: 1}}]);
         let responseObj = {
